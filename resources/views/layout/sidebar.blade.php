@@ -70,7 +70,7 @@
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li> --}}
-                <li class="nav-item menu-items active">
+                <li class="nav-item menu-items">
                     <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
                         aria-controls="ui-basic">
                         <span class="menu-icon">
@@ -104,6 +104,29 @@
                             </li>
                             <li class="nav-item"> <a class="nav-link"
                                     href="pages/ui-features/dropdowns.html">Waktu Pre-Order</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#pesanan" aria-expanded="false"
+                        aria-controls="pesanan">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-laptop"></i>
+                        </span>
+                        <span class="menu-title">Pesanan</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="pesanan">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item my-2 d-flex justify-content-between"> <a class="nav-link" href="pages/ui-features/buttons.html">Perlu DIkirim</a><span class="badge text-bg-info ">100</span>
+                            </li>
+                            <li class="nav-item my-2 d-flex justify-content-between"> <a class="nav-link"
+                                    href="pages/ui-features/dropdowns.html">Disiapkan</a><span class="badge text-bg-info ">100</span></li>
+                            <li class="nav-item my-2 d-flex justify-content-between"> <a class="nav-link"
+                                    href="pages/ui-features/dropdowns.html">Selesai</a><span class="badge text-bg-info ">100</span></li>
+                            <li class="nav-item my-2 d-flex justify-content-between"> <a class="nav-link"
+                                    href="pages/ui-features/dropdowns.html">Dikirim</a><span class="badge text-bg-info ">100</span></li>
 
                         </ul>
                     </div>
