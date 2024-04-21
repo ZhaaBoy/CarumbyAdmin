@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\admin\{PreOrderController, AddProductController};
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/liveproduct', [PreOrderController::class, 'index'])->name('preorder');
+Route::get('/addproduct', [AddProductController::class, 'index'])->name('addproduct');
