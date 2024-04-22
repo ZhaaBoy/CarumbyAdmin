@@ -81,10 +81,10 @@
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu ">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Live Product</a>
+                            <li class="nav-item"> <a class="nav-link" href="{{ route('preorder') }}">Live Product</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Add Product</a></li>
+                                    href="{{ route('addproduct') }}">Add Product</a></li>
 
                         </ul>
                     </div>
@@ -100,10 +100,10 @@
                     </a>
                     <div class="collapse" id="pre-order">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Daftar Produk</a>
+                            <li class="nav-item"> <a class="nav-link" href="{{route('daftarproduk')}}">Daftar Produk</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Waktu Pre-Order</a></li>
+                                    href="{{route('waktuproduk')}}">Waktu Pre-Order</a></li>
 
                         </ul>
                     </div>

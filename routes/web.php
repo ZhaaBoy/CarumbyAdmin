@@ -18,5 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/liveproduct', [PreOrderController::class, 'index'])->name('preorder');
+Route::get('/liveproduct', [AddProductController::class, 'live'])->name('preorder');
 Route::get('/addproduct', [AddProductController::class, 'index'])->name('addproduct');
+Route::get('/daftarproduct', [PreOrderController::class, 'index'])->name('daftarproduk');
+Route::get('/waktuproduk', [PreOrderController::class, 'waktu'])->name('waktuproduk');
+Route::get('/uploadproduk', [PreOrderController::class, 'upload'])->name('uploadproduk');

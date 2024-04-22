@@ -8931,8 +8931,10 @@ progress {
   .table-responsive-xxl {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch; } }
+
+
 .btn-danger {
-    background-color: red;
+
     width: 100px;
     height: 45px;
 }
