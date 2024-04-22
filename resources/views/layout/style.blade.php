@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{asset('corona/template/assets/vendors/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" href="{{asset('corona/template/assets/vendors/owl-carousel-2/owl.carousel.min.css')}}">
     <link rel="stylesheet" href="{{asset('corona/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('corona/template/assets/bootstrap/css/bootrstrap.min.css')}}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
