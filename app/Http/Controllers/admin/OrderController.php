@@ -5,22 +5,14 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PreOrderController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("admin.preorder.produk");
-    }
-    public function waktu()
-    {
-        return view("admin.preorder.waktu");
-    }
-    public function upload()
-    {
-        return view("admin.preorder.upload");
+        //
     }
 
     /**

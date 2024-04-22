@@ -16,6 +16,7 @@
     <script src="corona/template/assets/js/misc.js"></script>
     <script src="corona/template/assets/js/settings.js"></script>
     <script src="corona/template/assets/js/todolist.js"></script>
+    <script src="corona/template/assets/bootstrap/js/bootstrap.min.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="corona/template/assets/js/dashboard.js"></script>

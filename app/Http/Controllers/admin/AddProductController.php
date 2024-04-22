@@ -15,6 +15,11 @@ class AddProductController extends Controller
         return view('admin.addproduct.index');
     }
 
+    public function live()
+    {
+        return view ('admin.addproduct.live');
+    }
+
     /**
      * Show the form for creating a new resource.
      */
