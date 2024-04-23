@@ -23,3 +23,4 @@ Route::get('/addproduct', [AddProductController::class, 'index'])->name('addprod
 Route::get('/daftarproduct', [PreOrderController::class, 'index'])->name('daftarproduk');
 Route::get('/waktuproduk', [PreOrderController::class, 'waktu'])->name('waktuproduk');
 Route::get('/uploadproduk', [PreOrderController::class, 'upload'])->name('uploadproduk');
+Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store');
