@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Size;
 
 class AddProductController extends Controller
 {
@@ -12,7 +13,9 @@ class AddProductController extends Controller
      */
     public function index()
     {
-        return view('admin.addproduct.index');
+        $size = Size::all();
+        $code = 'contohkode';
+        return view('admin.addproduct.index', compact('size', 'code'));
     }
 
     public function live()
@@ -25,7 +28,7 @@ class AddProductController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -33,8 +36,39 @@ class AddProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>'string',
+            'product_code'=>'string'
+        ]);
+
+        $data = $request->all();
+
+        if (Size::create($data)) {
+            return redirect()->route('liveproduct');
+        } else {
+            alert()->error('Gagal');
+            return redirect()->route('liveproduct');
+        }
     }
+
+    public function size(Request $request)
+    {
+        $request->validate([
+            'name'=>'string',
+            'product_code'=>'string'
+        ]);
+
+        $data = $request->all();
+
+        if (Size::create($data)) {
+            return redirect()->route('liveproduct');
+        } else {
+            alert()->error('Gagal');
+            return redirect()->route('liveproduct');
+        }
+    }
+
+
 
     /**
      * Display the specified resource.
