@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\{PreOrderController, AddProductController};
+use App\Http\Controllers\admin\{PreOrderController, AddProductController, OrderController,OtherController};
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +23,9 @@ Route::get('/addproduct', [AddProductController::class, 'index'])->name('addprod
 Route::get('/daftarproduct', [PreOrderController::class, 'index'])->name('daftarproduk');
 Route::get('/waktuproduk', [PreOrderController::class, 'waktu'])->name('waktuproduk');
 Route::get('/uploadproduk', [PreOrderController::class, 'upload'])->name('uploadproduk');
+Route::get('/pesanan', [OrderController::class, 'index'])->name('orderproduct');
+Route::get('/broadcast', [OrderController::class, 'broadcast'])->name('broadcast');
+Route::get('/pelanggan', [OtherController::class, 'index'])->name('pelanggan');
 Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store');
+Route::post('/upcolor', [AddProductController::class, 'color'])->name('color.store');
+

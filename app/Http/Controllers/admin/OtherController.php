@@ -5,18 +5,14 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class OrderController extends Controller
+class OtherController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('admin.pesanan.pesanan');
-    }
-    public function broadcast()
-    {
-        return view('admin.pesanan.bc');
+        return view('admin.other.pelanggan');
     }
 
     /**
