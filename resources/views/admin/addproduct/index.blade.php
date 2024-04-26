@@ -10,7 +10,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputUsername1">Kode Product</label>
-                        <input type="text" name="product_code" class="form-control" id="codeproduct" placeholder="Username">
+                        <input type="text" value="{{$product}}" name="product_code" class="form-control" id="codeproduct" placeholder="Username" disabled>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1">Nama Product</label>
@@ -28,7 +28,7 @@
         </div>
 
     </div>
-    {{-- <div class="col-lg-12 grid-margin stretch-card">
+    <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">ukuran</h4>
@@ -36,7 +36,7 @@
                     @csrf
                     <div class="form-group">
                         <label for="exampleInputUsername1">kode</label>
-                        <input type="text" name="product_code" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                        <input type="text" name="product_code" value="{{$product}}" class="form-control" id="exampleInputUsername1" placeholder="Username">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername1">Nukuran</label>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-    </div> --}}
+    </div>
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -67,7 +67,7 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Bagan Ukuran</h4>
-                <form action="">
+                <form action="  ">
                     <div class="form-group d-flex grid gap-3">
                         <div class="row row-cols">
                             <div class="form-check">
@@ -86,7 +86,7 @@
                                 <label class="form-check-label mb-2" for="flexRadioDefault2">
                                     Default checked radio
                                 </label>
-                                <img src="assets/carrumby4.png" id="carumby" alt="">
+                                <img src="assets/chart.png" id="carumby" alt="" width="100dp" height="100dp">
                             </div>
                         </div>
                     </div>
@@ -155,8 +155,11 @@
                             </h4>
 
                             <div class="d-flex grid gap-3">
-                                <input type="checkbox" class="btn-check" id="opsi1" autocomplete="off">
-                                <label class="btn btn-outline-primary" for="opsi1">m</label><br>
+                                @forelse ($size as $sz)
+                                <span class="btn rounded-pill bg-light text-dark">{{$sz->name}}</span>
+                                @empty
+                                <div>Data Kosong</div>
+                                @endforelse
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-primary" style="background-color: #FF0000;" data-bs-toggle="modal"
                                     data-bs-target="#ukuran">
@@ -175,7 +178,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{url('upsize')}}" method="POST" enctype="multipart/form-data">
+                                                <form action="{{route('size.store')}}" method="POST" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="form-floating mb-3">
                                                         <input type="text" name="product_code" value="{{$code}}" class="form-control" id="product_code" placeholder="">

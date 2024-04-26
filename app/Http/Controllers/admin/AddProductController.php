@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Size;
+use App\Models\Product;
 
 class AddProductController extends Controller
 {
@@ -13,14 +14,18 @@ class AddProductController extends Controller
      */
     public function index()
     {
-        $size = Size::all();
-        $code = 'contohkode';
-        return view('admin.addproduct.index', compact('size', 'code'));
+        // $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
+        $product = rand(1,2000);
+        $code = "samples";
+        $size = Size::all()->where("product_code", $product);
+        // $color = Color::all()->where("product_code", $code);
+        return view('admin.addproduct.index', compact('size' , 'code','product'));
     }
 
     public function live()
     {
-        return view ('admin.addproduct.live');
+        $product = Product::all();
+        return view ('admin.addproduct.live', compact('product'));
     }
 
     /**
@@ -40,28 +45,28 @@ class AddProductController extends Controller
             'name'=>'string',
             'product_code'=>'string'
         ]);
+        $product = $request->product_code;
+        $size1 = $request->all();
 
-        $data = $request->all();
-
-        if (Size::create($data)) {
-            return redirect()->route('liveproduct');
+        if (Size::create($size1)) {
+            return back();
         } else {
             alert()->error('Gagal');
             return redirect()->route('liveproduct');
         }
     }
 
-    public function size(Request $request)
+    public function color(Request $request)
     {
         $request->validate([
             'name'=>'string',
             'product_code'=>'string'
         ]);
+        $code = $request->product_code;
+        $color = $request->all();
 
-        $data = $request->all();
-
-        if (Size::create($data)) {
-            return redirect()->route('liveproduct');
+        if (Color::create($color)) {
+            return redirect()->route('addproduct', compact('code'));
         } else {
             alert()->error('Gagal');
             return redirect()->route('liveproduct');
@@ -95,7 +100,7 @@ class AddProductController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Re`mo`ve the specified resource from storage.
      */
     public function destroy(string $id)
     {
