@@ -14,9 +14,10 @@ class AddProductController extends Controller
      */
     public function index()
     {
-        $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
+        // $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
+        $product = rand(1,2000);
         $code = "samples";
-        $size = Size::all()->where("product_code", $code);
+        $size = Size::all()->where("product_code", $product);
         // $color = Color::all()->where("product_code", $code);
         return view('admin.addproduct.index', compact('size' , 'code','product'));
     }
@@ -44,11 +45,11 @@ class AddProductController extends Controller
             'name'=>'string',
             'product_code'=>'string'
         ]);
-        $code = $request->product_code;
+        $product = $request->product_code;
         $size1 = $request->all();
 
         if (Size::create($size1)) {
-            return redirect()->route('addproduct', compact('code'));
+            return back();
         } else {
             alert()->error('Gagal');
             return redirect()->route('liveproduct');
