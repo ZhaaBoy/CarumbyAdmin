@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\{PreOrderController, AddProductController, OrderController,OtherController};
+use App\Http\Controllers\admin\{PreOrderController, AddProductController, OrderController, OtherController, SizeController, ColorController};
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +29,6 @@ Route::get('/broadcast', [OrderController::class, 'broadcast'])->name('broadcast
 Route::get('/pelanggan', [OtherController::class, 'index'])->name('pelanggan');
 Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store');
 Route::post('/upcolor', [AddProductController::class, 'color'])->name('color.store');
+Route::resource('/sizes', SizeController::class);
+Route::resource('/warna', ColorController::class);
 

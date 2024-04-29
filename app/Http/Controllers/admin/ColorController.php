@@ -4,30 +4,17 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Size;
 use App\Models\Color;
-use App\Models\Product;
 
-class AddProductController extends Controller
+class ColorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
-        $product = rand(1,2000);
-        $code = "samples";
-        $color = Color::all();
-        $size = Size::all();
-        // $color = Color::all()->where("product_code", $code);
-        return view('admin.addproduct.index', compact('size' , 'code','product','color'));
-    }
-
-    public function live()
-    {
-        $product = Product::all();
-        return view ('admin.addproduct.live', compact('product'));
+        $color = Color::simplepaginate(5);
+        return view('admin.kategori.warna.index', compact('color'));
     }
 
     /**
@@ -35,7 +22,7 @@ class AddProductController extends Controller
      */
     public function create()
     {
-
+        return view('admin.kategori.warna.create');
     }
 
     /**
@@ -43,11 +30,18 @@ class AddProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'string | required',
+        ]);
+        $color = $request->all();
 
+        if (Color::create($color)) {
+            return to_route('warna.index');
+        } else {
+            alert()->error('Gagal');
+            return back();
+        }
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -74,10 +68,14 @@ class AddProductController extends Controller
     }
 
     /**
-     * Re`mo`ve the specified resource from storage.
+     * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Color $color)
     {
-        //
+        if ($color->delete()) {
+            return back();
+        } else {
+            return back();
+        }
     }
 }
