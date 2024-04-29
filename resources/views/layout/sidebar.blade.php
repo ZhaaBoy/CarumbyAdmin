@@ -151,6 +151,25 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#kategori" aria-expanded="false"
+                        aria-controls="Lainnya">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-laptop"></i>
+                        </span>
+                        <span class="menu-title">Kategori</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="kategori">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="{{route('sizes.index')}}">Size</a>
+                            </li>
+                            <li class="nav-item"> <a class="nav-link"
+                                    href="{{route('warna.index')}}">Warna</a></li>
+
+                        </ul>
+                    </div>
+                </li>
 
             </ul>
         </nav>

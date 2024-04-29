@@ -5,29 +5,16 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Size;
-use App\Models\Color;
-use App\Models\Product;
 
-class AddProductController extends Controller
+class SizeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
-        $product = rand(1,2000);
-        $code = "samples";
-        $color = Color::all();
-        $size = Size::all();
-        // $color = Color::all()->where("product_code", $code);
-        return view('admin.addproduct.index', compact('size' , 'code','product','color'));
-    }
-
-    public function live()
-    {
-        $product = Product::all();
-        return view ('admin.addproduct.live', compact('product'));
+        $size = Size::simplepaginate(5);
+        return view('admin.kategori.size.index', compact('size'));
     }
 
     /**
@@ -35,7 +22,7 @@ class AddProductController extends Controller
      */
     public function create()
     {
-
+        return view('admin.kategori.size.create');
     }
 
     /**
@@ -43,11 +30,18 @@ class AddProductController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name'=>'string | required',
+        ]);
+        $size1 = $request->all();
 
+        if (Size::create($size1)) {
+            return to_route('sizes.index');
+        } else {
+            alert()->error('Gagal');
+            return back();
+        }
     }
-
-
-
 
     /**
      * Display the specified resource.
@@ -74,10 +68,15 @@ class AddProductController extends Controller
     }
 
     /**
-     * Re`mo`ve the specified resource from storage.
+     * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Size $size)
     {
-        //
+        if ($size->delete()) {
+            return back();
+        } else {
+            alert()->error('Gagal');
+            return back();
+        }
     }
 }
