@@ -2,6 +2,10 @@
 @section('title', 'Add Product Carumby')
 @section('product', 'active')
 @section('content')
+    <form action="{{ route("saveproduct") }}" method="GET">
+    @csrf
+    
+    {{-- product name, gambar --}}
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -28,8 +32,9 @@
                 </form>
             </div>
         </div>
-
     </div>
+
+    {{-- Product Description --}}
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -46,6 +51,7 @@
         </div>
     </div>
 
+    {{-- Size Format  & Video --}}
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -86,6 +92,7 @@
         </div>
     </div>
 
+    {{-- Sized & Colors --}}
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -110,27 +117,29 @@
                             @endforelse
                         </div>
                     </div>
-            </div>
-            <div class="card bg-secondary p-3 row mt-5">
-                <h4 class="card-title">
-                    Ukuran
-                </h4>
+                    <div class="card bg-secondary p-3 row mt-5">
+                        <h4 class="card-title">
+                            Ukuran
+                        </h4>
+        
+                        <div class="d-flex grid gap-3">
+                            @forelse ($size as $sz)
+                                <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                                    <input type="checkbox" class="btn-check" id="{{ $sz->id }}" name="size"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-success" for="{{ $sz->id }}">{{ $sz->name }}</label>
+                                    <!-- Button trigger modal -->
+                                @empty
+                                    <div>Data Kosong</div>
+                            @endforelse
+                        </div>
+                    </div>    
+                </form>
 
-                <div class="d-flex grid gap-3">
-                    @forelse ($size as $sz)
-                        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="btn-check" id="{{ $sz->id }}" name="size"
-                                autocomplete="off">
-                            <label class="btn btn-outline-success" for="{{ $sz->id }}">{{ $sz->name }}</label>
-                            <!-- Button trigger modal -->
-                        @empty
-                            <div>Data Kosong</div>
-                    @endforelse
-                </div>
                 <!-- Button trigger modal -->
 
                 <!-- Modal -->
-                <div class="modal fade" id="ukuran" data-bs-backdrop="static" data-bs-keyboard="false"
+                {{-- <div class="modal fade" id="ukuran" data-bs-backdrop="static" data-bs-keyboard="false"
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -163,18 +172,17 @@
 
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
-        <div class="d-flex justify-content-end"">
-            <button type="submit" class="btn btn-danger"
-                style="border-radius: 10px; background-color: #FF0000;">Lanjut</button>
-        </div>
-
-        </form>
     </div>
+    <div class="d-flex justify-content-end"">
+        <button type="submit" class="btn btn-danger"
+            style="border-radius: 10px; background-color: #FF0000;">Lanjut
+        </button>
     </div>
 
+    </form>
     
 @endsection
