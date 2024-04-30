@@ -15,16 +15,15 @@ class Product extends Model
         "image",
         "video",
         "description",
-        "format_size"   
+        "format_size",
+        "colors",
+        "sizes"
     ];
 
-    private function sizes() {
-        return $this->hasMany(Size::class, "products_code", "products_code");
-    }
-
-    private function colors() {
-        return $this->hasMany(Color::class, "products_code", "products_code");
-    }
+    protected $casts = [
+        'colors' => 'array',
+        'sizes' => 'array'
+    ];
 
     private function pre_order() {
         return $this->hasMany(Product_pre_order::class, "products_id", "id");

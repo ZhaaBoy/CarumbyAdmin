@@ -33,9 +33,9 @@ class SizeController extends Controller
         $request->validate([
             'name'=>'string | required',
         ]);
-        $size1 = $request->all();
+        $size = $request->all();
 
-        if (Size::create($size1)) {
+        if (Size::create($size)) {
             return to_route('sizes.index');
         } else {
             alert()->error('Gagal');
