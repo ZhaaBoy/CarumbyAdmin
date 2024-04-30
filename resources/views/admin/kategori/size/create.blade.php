@@ -10,7 +10,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputUsername1">Size</label>
-                    <input type="text" name="name" class="form-control" id="codeproduct" placeholder="Username">
+                    <input type="text" name="name" class="form-control" id="size" placeholder="Masukan Size">
                 </div>
                 <button class="btn btn-primary" type="submit">Simpan</button>
             </form>
