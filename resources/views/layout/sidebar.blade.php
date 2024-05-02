@@ -143,10 +143,10 @@
                     </a>
                     <div class="collapse" id="Lainnya">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{route('daftarproduk')}}">Data Pelanggan</a>
+                            <li class="nav-item"> <a class="nav-link" href="{{route('pelanggan')}}">Data Pelanggan</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="{{route('waktuproduk')}}">Banner Website</a></li>
+                                    href="">Banner Website</a></li>
 
                         </ul>
                     </div>

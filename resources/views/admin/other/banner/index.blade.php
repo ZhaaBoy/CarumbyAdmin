@@ -1,5 +1,5 @@
 @extends('kerangka.kerangka')
-@section('title', 'Pre - Order Carumby')
+@section('title', 'Banner Website Carumby')
 @section('Lainnya', 'active')
 @section('content')
 <div class="col-lg-12 grid-margin stretch-card">

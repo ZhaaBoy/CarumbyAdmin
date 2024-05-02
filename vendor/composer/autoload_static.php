@@ -354,8 +354,8 @@ class ComposerStaticInita47eda54989a4a2dd5e10545375e81e0
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -532,6 +532,12 @@ class ComposerStaticInita47eda54989a4a2dd5e10545375e81e0
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\admin\\AddProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/AddProductController.php',
+        'App\\Http\\Controllers\\admin\\ColorController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ColorController.php',
+        'App\\Http\\Controllers\\admin\\OrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/OrderController.php',
+        'App\\Http\\Controllers\\admin\\OtherController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/OtherController.php',
+        'App\\Http\\Controllers\\admin\\PreOrderController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/PreOrderController.php',
+        'App\\Http\\Controllers\\admin\\SizeController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/SizeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -542,7 +548,13 @@ class ComposerStaticInita47eda54989a4a2dd5e10545375e81e0
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Color' => __DIR__ . '/../..' . '/app/Models/Color.php',
+        'App\\Models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
+        'App\\Models\\Product_pre_order' => __DIR__ . '/../..' . '/app/Models/Product_pre_order.php',
+        'App\\Models\\Size' => __DIR__ . '/../..' . '/app/Models/Size.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
+        'App\\Models\\Variant' => __DIR__ . '/../..' . '/app/Models/Variant.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
