@@ -146,47 +146,46 @@
         </div>
         </div>
 
-        <div class="row">
-            <div class="row row-cols-2">
-                <div class="col-3">
-                    <div class="input-group mb-3">
-                        <label for="" class="d-flex align-items-center px-3">Berat</label>
-                        <input type="text" class="form-control" name="weight" aria-label="Recipient's username"
-                            aria-describedby="basic-addon2">
-                        <span class="input-group-text" id="basic-addon2">gr</span>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-3">
-                <div class="col-6">
-                    <div class="row g-3">
-                        <div class="col-4">
-                            <div class="input-group mb-3">
-                                <label for="" class="d-flex align-items-center px-3">Ukuran</label>
-                                <input type="text" class="form-control" name="height"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">cm</span>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" name="width"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">cm</span>
-                            </div>
-                        </div>
-                        <div class="col-3">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" name="lenght"
-                                    aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <span class="input-group-text" id="basic-addon2">cm</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
+    </div>
+</div>
+<div class="card row mt-3">
+    <div class="row row-cols-2">
+        <div class="col-3">
+            <div class="input-group mb-3">
+                <label for="" class="d-flex align-items-center px-3">Berat</label>
+                <input type="text" class="form-control" name="weight" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">gr</span>
             </div>
         </div>
+    </div>
+    <div class="row g-3">
+        <div class="col-6">
+            <div class="row g-3">
+                <div class="col-4">
+                    <div class="input-group mb-3">
+                        <label for="" class="d-flex align-items-center px-3">Ukuran</label>
+                        <input type="text" class="form-control" name="height"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="width"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="lenght"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <span class="input-group-text" id="basic-addon2">cm</span>
+                    </div>
+                </div>
+
+            </div>
         </div>
         <div class="d-flex justify-content-end"">
             <button type="submit" class="btn btn-danger" style="border-radius: 10px; background-color: #FF0000;">Lanjut
@@ -194,8 +193,7 @@
         </div>
     </form>
     </div>
-
-
+</div>
     </div>
     </div>
     </div>
