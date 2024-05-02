@@ -32,4 +32,5 @@ Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store
 Route::post('/upcolor', [AddProductController::class, 'color'])->name('color.store');
 Route::resource('/sizes', SizeController::class);
 Route::resource('/warna', ColorController::class);
+Route::resource('/product', AddProductController::class);
 

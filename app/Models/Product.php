@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-
+    
     protected $fillable = [
         "products_code",
         "name",
@@ -17,7 +17,11 @@ class Product extends Model
         "description",
         "format_size",
         "colors",
-        "sizes"
+        "sizes",
+        "weight",
+        "height",
+        "width",
+        'lenght'
     ];
 
     protected $casts = [
