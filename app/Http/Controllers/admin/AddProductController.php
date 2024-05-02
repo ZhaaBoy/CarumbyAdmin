@@ -44,36 +44,38 @@ class AddProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'product_code' => 'string|required|unique:products',
-            'name' => 'string|required',
-            'image' => 'file|image|required',
-            'video' => 'file|image|required',
-            'description' => 'string|required',
-            'format_size' => 'file|image|required',
-            'colors' => '',
-            'sizes' => '',
-            'weight' => 'string|required',
-            'height' => 'string|required',
-            'width' => 'string|required',
-            'lenght' => 'file|image|max:2048'
+            // 'name' => 'string|required',
+            // 'image' => 'file|image|required',
+            // 'video' => 'file|image|required',
+            // 'description' => 'string|required',
+            // 'format_size' => 'file|image|required',
+            // 'weight' => 'string|required',
+            // 'height' => 'string|required',
+            // 'width' => 'string|required',
+            // 'lenght' => 'string|required'
         ]);
 
         $product = new Product;
-        $product->product_code = $request->product_code;
         $product->name = $request->name;
+        $product->products_code = "eqr";
         $product->description = $request->description;
-        $product->colors = $request->colors;
-        $product->sizes = $request->sizes;
+        $product['colors'] = implode(',', $request->input('colors'));
+        $product['sizes'] = implode(',', $request->input('sizes'));
         $product->weight = $request->weight;
         $product->height = $request->height;
         $product->width = $request->width;
         $product->lenght = $request->lenght;
-        $product['image'] = $request->file('image')->store('asset/kelompokbelajar', 'public');
-
+        // $product['image'] = "svel";
+        $product['video'] = "sdgsls";
+        $product['format_size'] = "se";
+        $product['image'] = implode(',', $imageTemp);
+        // $product['video'] =  '$request->file('video')->move(public_path("assets"), "sd")';
+        // $product['format_size'] = $request->file('format_size')->move(public_path("assets"), "sdoo");
         if ($product->save()) {
             return redirect()->route('liveproduct');
         } else {
             alert()->error('Gagal');
+
             return back();
         };
     }

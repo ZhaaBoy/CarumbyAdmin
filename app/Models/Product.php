@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    
+
+    protected $table = 'products';
     protected $fillable = [
         "products_code",
         "name",
@@ -21,12 +22,7 @@ class Product extends Model
         "weight",
         "height",
         "width",
-        'lenght'
-    ];
-
-    protected $casts = [
-        'colors' => 'array',
-        'sizes' => 'array'
+        "lenght"
     ];
 
     private function pre_order() {
