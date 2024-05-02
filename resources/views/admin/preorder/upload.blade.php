@@ -36,20 +36,18 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="container">
-                        <div class="d-flex justify-content-end row row-cols-2 mt-3">
-                            <label for="" class="col-2">Total</label>
-                            <input type="email" style="width: 25%" class="form-control col-" value="300"
-                                id="exampleFormControlInput1" placeholder="kuantitas" disabled>
 
-                        </div>
+                </div>
+                    <div class="d-flex justify-content-end mt-3">
+                        <label for="" class="d-flex align-items-center px-3">Total</label>
+                        <input type="email" style="width: 15%" class="form-control mr-3" value="300"
+                            id="exampleFormControlInput1" placeholder="kuantitas">
+
                     </div>
 
-                    <div class="mt-3 d-flex justify-content-end">
-                        <button class="btn btn-danger"
-                            style="border-radius: 10px; background-color: #FF0000;">Lanjut</button>
-                    </div>
-
+                <div class="mt-3 d-flex justify-content-end">
+                    <button class="btn btn-danger"
+                        style="border-radius: 10px; background-color: #FF0000;">Lanjut</button>
                 </div>
             </div>
         </div>

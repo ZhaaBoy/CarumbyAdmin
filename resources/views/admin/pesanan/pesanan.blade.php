@@ -40,6 +40,7 @@
                                 <tr>
                                     <th></th>
                                     <th>No</th>
+                                    <th>Foto</th>
                                     <th>Pesanan</th>
                                     <th>Kode pelanggan</th>
                                     <th>Tanggal Pesanan</th>
@@ -55,6 +56,9 @@
                                                 id="flexCheckDefault">
                                         </div>
                                     </td>
+                                    <td>
+                                        001</td>
+
                                     <td><img src="assets/carrumby4.png" width="" class="img-lg" alt=""
                                             srcset=""></td>
                                     <td class="">Jaket Gunung Carumby Moonsoon

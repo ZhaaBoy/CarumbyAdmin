@@ -12,6 +12,7 @@
             <thead class="table-primary">
               <tr>
                 <th></th>
+                <th>No Produk</th>
                 <th>Foto</th>
                 <th>Nama Produk</th>
                 <th>SKU</th>
@@ -24,6 +25,7 @@
                 <td><div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   </div></td>
+                <td>CRMBY001</td>
                 <td><img src="assets/carrumby4.png" width="" class="img-lg" alt="" srcset=""></td>
                 <td>Jaket Gunung Carumby Moonsoon</td>
                 <td>JKTMNSN01</td>
