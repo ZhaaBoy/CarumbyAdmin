@@ -27,6 +27,7 @@ Route::get('/uploadproduk', [PreOrderController::class, 'upload'])->name('upload
 Route::get('/pesanan', [OrderController::class, 'index'])->name('orderproduct');
 Route::get('/broadcast', [OrderController::class, 'broadcast'])->name('broadcast');
 Route::get('/pelanggan', [OtherController::class, 'index'])->name('pelanggan');
+Route::get('/saveproduct', [AddProductController::class, 'store'])->name('saveproduct');
 Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store');
 Route::post('/upcolor', [AddProductController::class, 'color'])->name('color.store');
 Route::resource('/sizes', SizeController::class);
