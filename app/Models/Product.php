@@ -24,11 +24,6 @@ class Product extends Model
         'lenght'
     ];
 
-    protected $casts = [
-        'colors' => 'array',
-        'sizes' => 'array'
-    ];
-
     private function pre_order() {
         return $this->hasMany(Product_pre_order::class, "products_id", "id");
     }
