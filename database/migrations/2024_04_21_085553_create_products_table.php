@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string("video");
             $table->string("description");
             $table->string("format_size");
-            $table->json("colors");
-            $table->json("sizes");
+            $table->string("colors");
+            $table->string("sizes");
             $table->integer("weight");
             $table->integer("height");
             $table->integer("width");

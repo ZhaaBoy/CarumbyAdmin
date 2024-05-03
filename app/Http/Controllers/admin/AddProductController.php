@@ -16,12 +16,11 @@ class AddProductController extends Controller
     public function index()
     {
         // $product = Product::IDGenerator(new Product, 'products_code', 2, 'CRMBY');
-        $product = rand(1,2000);
-        $code = "samples";
+        $product = "dds";
         $color = Color::all();
         $size = Size::all();
         // $color = Color::all()->where("product_code", $code);
-        return view('admin.addproduct.index', compact('size' , 'code','product','color'));
+        return view('admin.addproduct.index', compact('size' , 'product','color'));
     }
 
     public function live()
@@ -44,34 +43,51 @@ class AddProductController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'product_code' => 'string|required|unique:products',
-            'name' => 'string|required',
-            'image' => 'file|image|required',
-            'video' => 'file|image|required',
-            'description' => 'string|required',
-            'format_size' => 'file|image|required',
-            'colors' => '',
-            'sizes' => '',
-            'weight' => 'string|required',
-            'height' => 'string|required',
-            'width' => 'string|required',
-            'lenght' => 'file|image|max:2048'
+            // 'product_code' => 'string|required|unique:products',
+            // 'name' => 'string|required',
+            // 'image' => 'file|image|required',
+            // 'video' => 'file|image|required',
+            // 'description' => 'string|required',
+            // 'format_size' => 'file|image|required',
+            // 'weight' => 'string|required',
+            // 'height' => 'string|required',
+            // 'width' => 'string|required',
         ]);
 
         $product = new Product;
-        $product->product_code = $request->product_code;
+        $product->products_code = $request->code;
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->colors = $request->colors;
-        $product->sizes = $request->sizes;
+        $product->colors = implode(",", $request->colors);
+        $product->sizes = implode(",", $request->sizes);
         $product->weight = $request->weight;
         $product->height = $request->height;
         $product->width = $request->width;
         $product->lenght = $request->lenght;
-        $product['image'] = $request->file('image')->store('asset/kelompokbelajar', 'public');
+
+        // Multiple Image product 
+        $imageTemp = [];
+        foreach($request->file('image') as $file) {
+            $imageTemp[] = $file->store('asset/product','public');
+        };
+        $product['image'] = implode('|', $imageTemp);
+
+        // Mutliple Image format size
+        $imageFormatSizeTemp = [];
+        foreach($request->file('format_size') as $file1) {
+            $imageFormatSizeTemp[] = $file1->store('asset/product','public');
+        };
+        $product['format_size'] = implode('|', $imageFormatSizeTemp);
+
+        // Multiple Video
+        $videoTemp = [];
+        foreach($request->file('video') as $file2) {
+            $videoTemp[] = $file2->store('asset/product','public');
+        };
+        $product['video'] = implode(',', $videoTemp);
 
         if ($product->save()) {
-            return redirect()->route('liveproduct');
+            return redirect()->route('preorder');
         } else {
             alert()->error('Gagal');
             return back();
