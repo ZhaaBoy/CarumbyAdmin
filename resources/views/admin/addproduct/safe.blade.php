@@ -134,7 +134,7 @@
                             <label class="btn btn-outline-primary" for="{{ $sz->name }}">{{ $sz->name }}</label>
                             <!-- Button trigger modal -->
                         @empty
-                            <div>Data Kosong</div>
+                            <h1>Data Kosong</h1>
                     @endforelse
                 </div>
                 <!-- Button trigger modal -->
