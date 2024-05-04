@@ -146,7 +146,7 @@
                             <li class="nav-item"> <a class="nav-link" href="{{route('pelanggan')}}">Data Pelanggan</a>
                             </li>
                             <li class="nav-item"> <a class="nav-link"
-                                    href="">Banner Website</a></li>
+                                    href="{{route('banner.index')}}">Banner Website</a></li>
 
                         </ul>
                     </div>

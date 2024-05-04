@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\{PreOrderController, AddProductController, OrderController, OtherController, SizeController, ColorController};
+use App\Http\Controllers\admin\{PreOrderController, AddProductController, OrderController, OtherController, SizeController, ColorController, BannerController};
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +31,6 @@ Route::post('/upsize', [AddProductController::class, 'store'])->name('size.store
 Route::post('/upcolor', [AddProductController::class, 'color'])->name('color.store');
 Route::resource('/sizes', SizeController::class);
 Route::resource('/warna', ColorController::class);
+Route::resource('/banner', BannerController::class);
 Route::resource('/product', AddProductController::class);
 
